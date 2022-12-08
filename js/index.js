@@ -1,11 +1,11 @@
-let words = ["arrays", "java", "kotlin", "dart", "python", "ruby"];
+const WORDS = ["arrays", "java", "kotlin", "dart", "python", "ruby"];
 //Regex for validating user input
-let inputPatern = /^[aA-zZ]*$/;
+const INPUTPATERN = /^[aA-zZ]*$/;
 //message to user
 let notify = " ";
 let lives = 6;
 //generating random words
-let randomWord = words[Math.floor(Math.random() * words.length)];
+let randomWord = WORDS[Math.floor(Math.random() * WORDS.length)];
 let remainingLetters = randomWord.length;
 let hiddenWord = [];
 for (i = 0; i < randomWord.length; i++) {
@@ -43,7 +43,7 @@ const startGame = () => {
         }
         userInput = userInput.toLowerCase();
 
-        if (userInput.length != 1 || !inputPatern.test(userInput)) {
+        if (userInput.length != 1 || !INPUTPATERN.test(userInput)) {
             notify = "Please enter a vallid single alphabet!  😒 ";
         }
         else if (isLetterInWord(userInput, randomWord)) {
