@@ -19,7 +19,7 @@ const isLetterInWord = (letter, word) => {
 //replacing blanks with correct letter
 const replaceHidenWord = (userInput, randomWord, hiddenWord) => {
     if (hiddenWord.includes(userInput)) {
-        notify = "You have already gussed the word!  🤔";
+        notify = "You have already gussed the word! 🤔  ";
         userInput++;
     } else {
         for (let i = 0; i < randomWord.length; i++) {
@@ -38,7 +38,7 @@ const startGame = () => {
              notify + "Lives: " + lives + "\n" + hiddenWord.join(" "));
 
         if (userInput === null) {
-            alert("Come back again to paly!  🤷‍♀️");
+            alert("Come back again to paly! 🤷‍♀️");
             break;
         }
         userInput = userInput.toLowerCase();
@@ -55,12 +55,12 @@ const startGame = () => {
             if (lives === 1) {
                 notify = "Only one llife left!  🫣 ";
             } else if (lives === 0) {
-                alert("GAME OVER! 😢");
+                alert("GAME OVER! 😢 \n\n"+ "Right Word:  " + randomWord);
                 break;
             }
         }
         if (remainingLetters === 0) {
-            alert("🎉Congratulations! YOU WON 🏆!\n\n" + "Right word: " + randomWord);
+            alert("🎉Congratulations! YOU WON 🏆!\n\n" + "Right Word:  " + randomWord);
             break;
         }
     }
