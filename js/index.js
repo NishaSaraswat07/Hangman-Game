@@ -65,6 +65,5 @@ const startGame = () => {
         }
     }
 }
-
 startGame()
 document.getElementById("play-again").addEventListener('click',function(){window.location.reload("Refresh")});
