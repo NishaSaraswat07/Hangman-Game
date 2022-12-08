@@ -16,7 +16,7 @@ for (i = 0; i < randomWord.length; i++) {
 const isLetterInWord = (letter, word) => {
     return word.includes(letter)
 }
-
+//replacing blanks with correct letter
 const replaceHidenWord = (userInput, randomWord, hiddenWord) => {
     if (hiddenWord.includes(userInput)) {
         notify = "You have already gussed the word!";
@@ -33,9 +33,9 @@ const replaceHidenWord = (userInput, randomWord, hiddenWord) => {
 }
 
 const startGame = () => {
-    while (remainingLetters > 0) {
-        let userInput = prompt("Guess a letter to compleate the word!\n" +
-            "  Or" + "\nCancel to quit \n\n" + notify + "  Lives: " + lives + "\n" + hiddenWord.join(" "));
+    while (lives > 0) {
+        let userInput = prompt("Guess a letter or Cancel to quit!\n\n" +
+             notify + "Lives: " + lives + "\n" + hiddenWord.join(" "));
 
         if (userInput === null) {
             alert("Come back again to paly!");
@@ -44,26 +44,27 @@ const startGame = () => {
         userInput = userInput.toLowerCase();
 
         if (userInput.length != 1 || !inputPatern.test(userInput)) {
-            notify = "please enter a vallid single alphabet!";
+            notify = "Please enter a vallid single alphabet!  😒 ";
         }
         else if (isLetterInWord(userInput, randomWord)) {
-            notify = "Yae! Letter found in the word.";
+            notify = "Yae! Letter found in the word.  🤗 ";
             replaceHidenWord(userInput, randomWord, hiddenWord);
         } else {
-            notify = "Nope! Letter not found in the word.";
+            notify = "Nope! Letter not found in the word.  😔";
             lives--;
             if (lives === 1) {
-                notify = "Only one llife left!";
+                notify = "Only one llife left!  🫣";
             } else if (lives === 0) {
-                alert("Game Over!");
+                alert("GAME OVER! 😢");
                 break;
             }
         }
         if (remainingLetters === 0) {
-            alert("Congratulations! YOU WON!\n" + "Right word: " + randomWord);
+            alert("🎉Congratulations! YOU WON 🏆!\n\n" + "Right word: " + randomWord);
             break;
         }
     }
 }
 
 startGame()
+document.getElementById("play-again").addEventListener('click',function(){window.location.reload("Refresh")});

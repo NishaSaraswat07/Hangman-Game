@@ -1,0 +1,14 @@
+h1 {
+    text-align: center;
+    color: #8D0801;
+    margin-top: 100px;
+}
+
+#play-again {
+    padding: 15px 30px;
+    background-color: #EDD83D;
+    border-radius: 15px;
+    font-size: larger;
+    margin: 50px 575px;
+    border-style: none;
+}
