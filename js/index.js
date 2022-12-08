@@ -19,7 +19,7 @@ const isLetterInWord = (letter, word) => {
 //replacing blanks with correct letter
 const replaceHidenWord = (userInput, randomWord, hiddenWord) => {
     if (hiddenWord.includes(userInput)) {
-        notify = "You have already gussed the word!";
+        notify = "You have already gussed the word!  🤔";
         userInput++;
     } else {
         for (let i = 0; i < randomWord.length; i++) {
@@ -38,7 +38,7 @@ const startGame = () => {
              notify + "Lives: " + lives + "\n" + hiddenWord.join(" "));
 
         if (userInput === null) {
-            alert("Come back again to paly!");
+            alert("Come back again to paly!  🤷‍♀️");
             break;
         }
         userInput = userInput.toLowerCase();
@@ -47,13 +47,13 @@ const startGame = () => {
             notify = "Please enter a vallid single alphabet!  😒 ";
         }
         else if (isLetterInWord(userInput, randomWord)) {
-            notify = "Yae! Letter found in the word.  🤗 ";
+            notify = "Yae! Letter found in the word.  🤩 ";
             replaceHidenWord(userInput, randomWord, hiddenWord);
         } else {
-            notify = "Nope! Letter not found in the word.  😔";
+            notify = "Nope! Letter not found in the word.  😔 ";
             lives--;
             if (lives === 1) {
-                notify = "Only one llife left!  🫣";
+                notify = "Only one llife left!  🫣 ";
             } else if (lives === 0) {
                 alert("GAME OVER! 😢");
                 break;
